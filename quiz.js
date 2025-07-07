@@ -1,37 +1,3 @@
-// const questions=[
-// {
-//     'que':"which of the follwing is a markup language",
-//     'a':'HTML',
-//     'b':'CSS',
-//     'c':'Javascript',
-//     'd':'typescript',
-//     'correct':'a'
-// },
-// {
-//     'que':'which of the follwing is web   language',
-//     'a':'C++',
-//     'b':'Javascript',
-//     'c':'C#',
-//     'd':'Java',
-//     'correct':'b'
-// },
-// {
-//     'que':'which of the follwing is not a language',
-//     'a':'Java',
-//     'b':'CSS',
-//     'c':'Python',
-//     'd':'typescript',
-//     'correct':'b'
-// }
-// ]
-// let index=0;
-// const queBox  =document.getElementById("queBox")
-// const loadQuestion=()=>{
-// const data = questions[index]
-// queBox.innerText =data.que;
-// }
-
-// loadQuestion();
 const questions = [
     {
         'que': "Which of the following is a markup language?",
