@@ -25,20 +25,20 @@ const questions = [
     }
 ];
 
-let index = 0;
-let total = questions.length;
-let right = 0, wrong = 0;
-const queBox = document.getElementById("queBox");
-const options = document.querySelectorAll(".options");
-const submitBtn = document.querySelector(".btn");
+let index = 0;//index: Tracks which question is currently being shown
+let total = questions.length;//total: Total number 
+let right = 0, wrong = 0;//how many answers were correct or incorrect
+const queBox = document.getElementById("queBox");//queBox: Where the question will be displayed
+const options = document.querySelectorAll(".options");//options: All radio buttons (input options)
+const submitBtn = document.querySelector(".btn");//submitBtn: The button to submit the answer
 
 const loadQuestion = () => {
     if (index === total) {
-        return endQuiz();
+        return endQuiz();// End quiz if no more questions
     }
 
-    const data = questions[index];
-    queBox.innerText = `${index + 1}. ${data.que}`;
+    const data = questions[index];// Current question data
+    queBox.innerText = `${index + 1}. ${data.que}`;// Show question
     options[0].nextElementSibling.innerText = data.a;
     options[1].nextElementSibling.innerText = data.b;
     options[2].nextElementSibling.innerText = data.c;
@@ -69,8 +69,8 @@ const endQuiz = () => {
 };
 
 submitBtn.addEventListener("click", () => {
-    const data = questions[index];
-    const ans = getAnswer();
+    const data = questions[index]; // Get current question
+    const ans = getAnswer();// Get selected answer
 
     if (ans === data.correct) {
         right++;
@@ -78,9 +78,9 @@ submitBtn.addEventListener("click", () => {
         wrong++;
     }
 
-    index++;
-    reset();
-    loadQuestion();
+    index++;  // Go to next question
+    reset();// Reset options
+    loadQuestion();// Load next question
 });
 
-loadQuestion();
+loadQuestion();//called initially to load the first question when the page loads
